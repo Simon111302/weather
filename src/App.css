@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.app {
+  width: 100%;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(20, 30, 48, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.loading {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  padding: 40px 20px;
+}
+
+/* City Selector */
+.city-selector {
+  margin-bottom: 24px;
+}
+
+.city-selector select {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: rgba(15, 23, 42, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.city-selector select:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.city-selector select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.city-selector select option {
+  background: #1e293b;
+  color: white;
+  padding: 10px;
+}
+
+/* Grid Layout - Landscape for Desktop */
+.weather-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .container {
+    padding: 40px;
+  }
+
+  .weather-grid {
+    gap: 32px;
+  }
+}
+
+/* Tablet - Still Landscape */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+/* Tablet Portrait - Switch to Portrait */
+@media (max-width: 768px) {
+  .weather-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .container {
+    padding: 28px;
+    border-radius: 20px;
+  }
+
+  .app {
+    padding: 20px;
+  }
+
+  .right-section {
+    gap: 20px;
+  }
+}
+
+/* Mobile - Portrait with more side padding */
+@media (max-width: 480px) {
+  .app {
+    padding: 16px;
+  }
+
+  .container {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .loading {
+    font-size: 18px;
+  }
+
+  .weather-grid {
+    gap: 16px;
+  }
+
+  .right-section {
+    gap: 16px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  .app {
+    padding: 12px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}

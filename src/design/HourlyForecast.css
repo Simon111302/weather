@@ -1,0 +1,122 @@
+.hourly-forecast {
+    background: rgba(10, 18, 35, 0.6);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .hourly-forecast h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .hourly-list {
+    display: flex;
+    gap: 32px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  
+  .hourly-list::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .hourly-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+  
+  .hourly-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  .hour-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 70px;
+  }
+  
+  .hour-item .time {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+  }
+  
+  .hour-item img {
+    width: 56px;
+    height: 56px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+  }
+  
+  .hour-item .temp {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  /* Tablet & Mobile */
+  @media (max-width: 768px) {
+    .hourly-forecast {
+      padding: 20px;
+    }
+  
+    .hourly-forecast h3 {
+      font-size: 14px;
+    }
+  
+    .hourly-list {
+      gap: 24px;
+    }
+  
+    .hour-item {
+      min-width: 60px;
+    }
+  
+    .hour-item img {
+      width: 48px;
+      height: 48px;
+    }
+  
+    .hour-item .temp {
+      font-size: 16px;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 480px) {
+    .hourly-forecast {
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+  
+    .hourly-list {
+      gap: 20px;
+    }
+  
+    .hour-item {
+      min-width: 56px;
+      gap: 8px;
+    }
+  
+    .hour-item .time {
+      font-size: 12px;
+    }
+  
+    .hour-item img {
+      width: 44px;
+      height: 44px;
+    }
+  
+    .hour-item .temp {
+      font-size: 15px;
+    }
+  }
+  
