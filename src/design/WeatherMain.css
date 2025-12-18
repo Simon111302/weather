@@ -53,14 +53,15 @@
     }
   }
   
-  /* Tablet */
+  /* Tablet - Tighter spacing */
   @media (max-width: 768px) {
     .location h1 {
       font-size: 36px;
     }
   
     .location p {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      font-size: 15px;
     }
   
     .temperature h2 {
@@ -69,6 +70,7 @@
   
     .temperature p {
       font-size: 18px;
+      margin-top: 8px;
     }
   
     .weather-icon {
@@ -77,21 +79,48 @@
     }
   }
   
-  /* Mobile */
+  /* Mobile - Compact */
   @media (max-width: 480px) {
     .location h1 {
-      font-size: 28px;
+      font-size: 32px;
+      margin-bottom: 2px;
     }
   
     .location p {
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
   
     .current-weather {
       flex-direction: column;
       text-align: center;
-      gap: 16px;
+      gap: 12px;
+    }
+  
+    .temperature h2 {
+      font-size: 72px;
+    }
+  
+    .temperature p {
+      font-size: 16px;
+      margin-top: 6px;
+    }
+  
+    .weather-icon {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
+  /* Very small - Ultra compact */
+  @media (max-width: 360px) {
+    .location h1 {
+      font-size: 28px;
+    }
+  
+    .location p {
+      font-size: 13px;
+      margin-bottom: 12px;
     }
   
     .temperature h2 {
@@ -99,12 +128,12 @@
     }
   
     .temperature p {
-      font-size: 16px;
+      font-size: 15px;
     }
   
     .weather-icon {
-      width: 140px;
-      height: 140px;
+      width: 100px;
+      height: 100px;
     }
   }
   

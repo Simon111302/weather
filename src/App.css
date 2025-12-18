@@ -1,7 +1,15 @@
+/* Reset browser defaults */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -14,19 +22,29 @@ body {
   color: white;
 }
 
+#root {
+  width: 100%;
+  max-width: 100%;
+}
+
 .app {
   width: 100%;
+  max-width: 100vw;
   padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   background: rgba(20, 30, 48, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 24px;
   padding: 32px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
 }
 
 .loading {
@@ -53,6 +71,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   outline: none;
+  box-sizing: border-box;
 }
 
 .city-selector select:hover {
@@ -71,22 +90,25 @@ body {
   padding: 10px;
 }
 
-/* Grid Layout - Landscape for Desktop */
+/* Grid Layout */
 .weather-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+  width: 100%;
 }
 
 .left-section {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .right-section {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-width: 0;
 }
 
 /* Large Desktop */
@@ -98,44 +120,56 @@ body {
   .weather-grid {
     gap: 32px;
   }
+
+  .app {
+    padding: 20px 40px;
+  }
 }
 
-/* Tablet - Still Landscape */
+/* Desktop/Laptop */
 @media (max-width: 1024px) {
   .container {
     max-width: 900px;
   }
+
+  .app {
+    padding: 20px 30px;
+  }
 }
 
-/* Tablet Portrait - Switch to Portrait */
+/* Tablet Portrait */
 @media (max-width: 768px) {
   .weather-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .container {
-    padding: 28px;
-    border-radius: 20px;
-  }
-
-  .app {
-    padding: 20px;
-  }
-
-  .right-section {
-    gap: 20px;
-  }
-}
-
-/* Mobile - Portrait with more side padding */
-@media (max-width: 480px) {
-  .app {
-    padding: 16px;
+    gap: 16px;
   }
 
   .container {
     padding: 24px;
+    border-radius: 20px;
+  }
+
+  .app {
+    padding: 16px 24px;
+  }
+
+  .right-section {
+    gap: 16px;
+  }
+
+  .city-selector {
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .app {
+    padding: 12px 20px;
+  }
+
+  .container {
+    padding: 20px;
     border-radius: 16px;
   }
 
@@ -144,21 +178,37 @@ body {
   }
 
   .weather-grid {
-    gap: 16px;
+    gap: 12px;
   }
 
   .right-section {
-    gap: 16px;
+    gap: 12px;
+  }
+
+  .city-selector {
+    margin-bottom: 16px;
   }
 }
 
 /* Extra small phones */
 @media (max-width: 360px) {
   .app {
-    padding: 12px;
+    padding: 10px 16px;
   }
 
   .container {
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .weather-grid {
+    gap: 10px;
+  }
+
+  .right-section {
+    gap: 10px;
+  }
+
+  .city-selector {
+    margin-bottom: 12px;
   }
 }

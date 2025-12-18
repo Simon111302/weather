@@ -2,7 +2,7 @@
     background: rgba(10, 18, 35, 0.6);
     border-radius: 16px;
     padding: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 0;
     border: 1px solid rgba(255, 255, 255, 0.05);
   }
   
@@ -19,21 +19,27 @@
     display: flex;
     gap: 32px;
     overflow-x: auto;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
   }
   
+  /* Better visible scrollbar */
   .hourly-list::-webkit-scrollbar {
-    height: 6px;
+    height: 8px;
   }
   
   .hourly-list::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 10px;
   }
   
   .hourly-list::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .hourly-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
   }
   
   .hour-item {
@@ -62,22 +68,29 @@
     color: #ffffff;
   }
   
-  /* Tablet & Mobile */
+  /* Tablet & Mobile - Tighter */
   @media (max-width: 768px) {
     .hourly-forecast {
-      padding: 20px;
+      padding: 18px;
     }
   
     .hourly-forecast h3 {
       font-size: 14px;
+      margin-bottom: 16px;
     }
   
     .hourly-list {
       gap: 24px;
+      padding-bottom: 10px;
+    }
+  
+    .hourly-list::-webkit-scrollbar {
+      height: 6px;
     }
   
     .hour-item {
       min-width: 60px;
+      gap: 10px;
     }
   
     .hour-item img {
@@ -90,11 +103,15 @@
     }
   }
   
-  /* Mobile */
+  /* Mobile - Compact */
   @media (max-width: 480px) {
     .hourly-forecast {
       padding: 16px;
-      margin-bottom: 16px;
+    }
+  
+    .hourly-forecast h3 {
+      font-size: 13px;
+      margin-bottom: 12px;
     }
   
     .hourly-list {
