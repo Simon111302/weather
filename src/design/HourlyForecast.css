@@ -1,139 +1,103 @@
 .hourly-forecast {
-    background: rgba(10, 18, 35, 0.6);
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 0;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 14px;
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(9, 22, 41, 0.9), rgba(7, 18, 35, 0.82));
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--panel-shadow);
+}
+
+.hourly-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(82px, 1fr));
+  gap: 8px;
+}
+
+.hour-item {
+  padding: 10px 8px;
+  border-radius: 14px;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.hour-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(145, 205, 255, 0.18);
+  box-shadow: 0 14px 34px rgba(2, 6, 15, 0.26);
+}
+
+.hour-item .time {
+  color: #dfeeff;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.hour-icon-shell {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 8px auto 6px;
+  border-radius: 12px;
+  background: radial-gradient(circle, rgba(122, 214, 255, 0.2), rgba(122, 214, 255, 0.02));
+}
+
+.hour-item img {
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(0 0 14px rgba(124, 209, 255, 0.2));
+}
+
+.hour-item .temp {
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: -0.05em;
+}
+
+.condition {
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-size: 0.64rem;
+  line-height: 1.1;
+  text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  .hourly-forecast {
+    padding: 12px;
+    border-radius: 14px;
   }
-  
-  .hourly-forecast h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 20px;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
+
   .hourly-list {
-    display: flex;
-    gap: 32px;
-    overflow-x: auto;
-    padding-bottom: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  
-  /* Better visible scrollbar */
-  .hourly-list::-webkit-scrollbar {
-    height: 8px;
+}
+
+@media (max-width: 480px) {
+  .hourly-forecast {
+    padding: 10px;
+    border-radius: 12px;
   }
-  
-  .hourly-list::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
+
+  .hourly-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
-  
-  .hourly-list::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 10px;
-    transition: background 0.3s ease;
-  }
-  
-  .hourly-list::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.6);
-  }
-  
+
   .hour-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    min-width: 70px;
+    padding: 8px 6px;
+    border-radius: 12px;
   }
-  
+
   .hour-item .time {
-    font-size: 14px;
-    color: #64748b;
-    font-weight: 500;
+    font-size: 0.72rem;
   }
-  
-  .hour-item img {
-    width: 56px;
-    height: 56px;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
-  }
-  
+
   .hour-item .temp {
-    font-size: 18px;
-    font-weight: 600;
-    color: #ffffff;
+    font-size: 1rem;
   }
-  
-  /* Tablet & Mobile - Tighter */
-  @media (max-width: 768px) {
-    .hourly-forecast {
-      padding: 18px;
-    }
-  
-    .hourly-forecast h3 {
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-  
-    .hourly-list {
-      gap: 24px;
-      padding-bottom: 10px;
-    }
-  
-    .hourly-list::-webkit-scrollbar {
-      height: 6px;
-    }
-  
-    .hour-item {
-      min-width: 60px;
-      gap: 10px;
-    }
-  
-    .hour-item img {
-      width: 48px;
-      height: 48px;
-    }
-  
-    .hour-item .temp {
-      font-size: 16px;
-    }
-  }
-  
-  /* Mobile - Compact */
-  @media (max-width: 480px) {
-    .hourly-forecast {
-      padding: 16px;
-    }
-  
-    .hourly-forecast h3 {
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-  
-    .hourly-list {
-      gap: 20px;
-    }
-  
-    .hour-item {
-      min-width: 56px;
-      gap: 8px;
-    }
-  
-    .hour-item .time {
-      font-size: 12px;
-    }
-  
-    .hour-item img {
-      width: 44px;
-      height: 44px;
-    }
-  
-    .hour-item .temp {
-      font-size: 15px;
-    }
-  }
-  
+}
